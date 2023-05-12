@@ -1,6 +1,8 @@
 @import 'header';
 @import 'slider';
 @import 'catalog';
+@import 'spinner';
+
 body {
     margin: 0;
     padding: 0;
@@ -11,6 +13,8 @@ body {
 button {
     background: none;
     border: none;
+    font-family: 'Montserrat', sans-serif;
+    font-style: normal;
 }
 
 .wrapper {
