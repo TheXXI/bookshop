@@ -1,11 +1,51 @@
+@import 'variables';
 @import 'spinner';
-
 .catalog {
     margin-top: 105px;
     position: relative;
 }
 
+.catalog-categories-list {
+    background-color: #EFEEF6;
+    padding-right: 138px;
+    display: table;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    li {
+        margin: 23px 0px 0px 0px;
+        padding: 0px;
+        button {
+            font-weight: 500;
+            font-size: 12px;
+            line-height: 15px;
+            /* identical to box height */
+            text-transform: capitalize;
+            /* text gray */
+            color: $text-color;
+        }
+    }
+    li:first-child {
+        margin-top: 0px;
+        padding-top: 45px;
+    }
+    li:last-child {
+        padding-bottom: 81px;
+    }
+    .active {
+        list-style-type: disc;
+        color: #756AD3;
+        button {
+            font-weight: 700;
+            font-size: 16px;
+            line-height: 20px;
+            color: $text-color-active;
+        }
+    }
+}
+
 .catalog-categories-background {
+    z-index: -1;
     position: absolute;
     top: 0;
     left: -196px;

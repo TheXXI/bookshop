@@ -1,15 +1,12 @@
-.slider {
-
-}
+.slider {}
 
 .slider-image {
     height: 702px;
-    background-image: url(../../src/images/banner1.jpg);
+    background-image: url('../../src/images/banner1.svg');
     background-size: cover;
     background-position: center center;
     transition: opacity 800ms ease;
     position: relative;
-
     img {
         position: absolute;
     }
@@ -31,13 +28,9 @@
     margin-top: 17px;
     display: flex;
     justify-content: center;
-
     button {
         margin-right: 10px;
-        background:none;
-        border: none;
     }
-
     button:last-child {
         margin-right: 0px;
     }
