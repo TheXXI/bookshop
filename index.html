@@ -12,29 +12,85 @@
 </head>
 <body>
 
-    <header class="wrapper">
-        <div class="logo">Bookshop</div>
-
-        <nav>
-            <ul class="header-navigation-pages">
-                <li class="active">books</li>
-                <li>audiobooks</li>
-                <li>Stationery & gifts</li>
-                <li>blog</li>
+    <div class="header-background">
+        <header class="wrapper">
+            <div class="logo">Bookshop</div>
+            <nav>
+                <ul class="header-navigation-pages">
+                    <li class="active">books</li>
+                    <li>audiobooks</li>
+                    <li>Stationery & gifts</li>
+                    <li>blog</li>
+                </ul>
+            </nav>
+            <ul class="header-navigation">
+                <li><img src="./src/images/icons/profile.svg" alt="Profile"></li>
+                <li><img src="./src/images/icons/search.svg" alt="Search"></li>
+                <li class="cart">
+                    <img src="./src/images/icons/cart.svg" alt="Cart">
+                    <div class="books-in-card">1</div>
+                </li>
             </ul>
-        </nav>
+        </header>
+    </div>
 
-        <ul class="header-navigation">
-            <li><img src="./src/images/icons/profile.svg" alt="Profile"></li>
-            <li><img src="./src/images/icons/search.svg" alt="Search"></li>
-            <li class="test">
-                <img src="./src/images/icons/cart.svg" alt="Cart">
-                <div class="books-in-card">1</div>
-            </li>
-        </ul>
+    <main class="wrapper">
+
+        <section class="slider">
+            <div class="slider-image">
+                <img class="promo-first" src="./src/images/promo1.svg" alt="Promo first">
+                <img class="promo-second" src="./src/images/promo2.svg" alt="Promo second">
+            </div>
+            <div class="slider-points">
+                <button><img src="./src/images/icons/active_point.svg" alt="Slider page"></button>
+                <button><img src="./src/images/icons/point.svg" alt="Slider page"></button>
+                <button><img src="./src/images/icons/point.svg" alt="Slider page"></button>
+                <button><img src="./src/images/icons/point.svg" alt="Slider page"></button>
+            </div>
+        </section>
+
+        <section class="catalog">
+
+            <div class="catalog-books">
+
+                <div class="catalog-spinner-block">
+                    <svg class="catalog-spinner" viewBox="0 0 50 50">
+                        <circle class="path" cx="25" cy="25" r="20" fill="none" stroke-width="5"></circle>
+                    </svg>
+                </div>
+                
+            </div>
+
+            <div class="catalog-categories-background">
+            </div>
+
+            <ul class="catalog-categories-list">
+
+            </ul>
+            <!--Architecture
+            Art & Fashion
+            Biography
+            Business
+            Crafts & Hobbies
+            Drama
+            
+            Fiction
+            
+            Food & Drink
+            Health & Wellbeing
+            History & Politics
+            Humor
+            Poetry
+            
+            Psychology
+            Science
+            
+            Technology
+            Travel & Maps-->
+        </section>
+
+    </main>
     
-
-    </header>
     <script src="./dist/main.js"></script>
 </body>
 </html>

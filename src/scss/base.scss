@@ -1,10 +1,6 @@
 @import 'header';
-
-$bg-color: red;
-
-/*body {
- background: $bg-color;
-}*/
+@import 'slider';
+@import 'catalog';
 
 body {
   margin:  0;
@@ -13,9 +9,6 @@ body {
 }
 
 .wrapper {
-    width: 1120px + 2px;
+    max-width: 1120px;
     margin: 0 auto;
-    border-left:1px solid black;
-    border-right:1px solid black;
-    border-bottom: 1px solid black;
 }

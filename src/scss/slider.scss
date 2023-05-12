@@ -1,0 +1,44 @@
+.slider {
+
+}
+
+.slider-image {
+    height: 702px;
+    background-image: url(../../src/images/banner1.jpg);
+    background-size: cover;
+    background-position: center center;
+    transition: opacity 800ms ease;
+    position: relative;
+
+    img {
+        position: absolute;
+    }
+    .promo-first {
+        right: -63px;
+        top: 79px;
+        width: 149px;
+        height: 204px;
+    }
+    .promo-second {
+        right: -84px + -158px;
+        bottom: 70px;
+        width: 158px;
+        height: 273px;
+    }
+}
+
+.slider-points {
+    margin-top: 17px;
+    display: flex;
+    justify-content: center;
+
+    button {
+        margin-right: 10px;
+        background:none;
+        border: none;
+    }
+
+    button:last-child {
+        margin-right: 0px;
+    }
+}

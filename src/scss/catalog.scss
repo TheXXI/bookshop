@@ -1,0 +1,23 @@
+@import 'spinner';
+
+.catalog {
+    margin-top: 105px;
+    position: relative;
+}
+
+.catalog-categories-background {
+    position: absolute;
+    top: 0;
+    left: -196px;
+    width: 416px;
+    height: 710px;
+    background: #EFEEF6;
+}
+
+.catalog-books {
+    width: 924px;
+    background-color: white;
+    position: absolute;
+    top: 0;
+    right: 0;
+}

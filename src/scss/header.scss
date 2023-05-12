@@ -1,5 +1,13 @@
 @import 'variables';
 
+.header-background {
+    width: 100%;
+    background-color: white;
+    position: sticky;
+    top: 0;
+    left: 0;
+}
+
 header {
     height: 116px;
     display: flex;
@@ -47,17 +55,14 @@ header {
         }
     }
 
-    .test {
-        width: 17px;
-        height: 17px;
+    .cart {
         position: relative;
     }
 
     .books-in-card {
-        position: relative;
-        z-index: 10;
-        margin-left: 5px;
-        margin-top: -12px;
+        position: absolute;
+        bottom: -2px; 
+        right: -4px; 
         height: 13px;
         width: 13px;
         background-color: #FF353A;
