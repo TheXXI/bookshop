@@ -159,9 +159,15 @@
                 padding: 0px;
                 margin: 0px;
             }
+            button {
+                font-size: 18px;
+            }
         }
         .active {
             list-style-type: none;
+            button {
+                font-size: 18px;
+            }
         }
     }
     .catalog-books {
