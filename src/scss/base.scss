@@ -1,13 +1,18 @@
+@import 'variables';
 @import 'header';
 @import 'slider';
 @import 'catalog';
 @import 'spinner';
-
 body {
     margin: 0;
     padding: 0;
     font-family: 'Montserrat', sans-serif;
     font-style: normal;
+}
+
+a,
+button {
+    cursor: pointer;
 }
 
 button {
