@@ -1,14 +1,22 @@
-.slider-image {
+.slider-content {
     height: 702px;
-    background-image: url('../../src/images/banner2.svg');
-    background-size: cover;
-    background-position: center center;
-    transition: opacity 800ms ease;
     position: relative;
-    img {
+    .slider-image {
+        z-index: 0;
+        width: 100%;
+        height: 100%;
         position: absolute;
+        left: 0;
+        top: 0;
+        transition: opacity 800ms ease;
+        opacity: 0;
+    }
+    .active {
+        opacity: 1;
     }
     .promo-first {
+        z-index: 1;
+        position: absolute;
         right: -63px;
         top: 79px;
         width: 149px;
@@ -20,6 +28,8 @@
         }
     }
     .promo-second {
+        z-index: 1;
+        position: absolute;
         right: -84px + -158px;
         bottom: 70px;
         width: 158px;
@@ -36,10 +46,17 @@
     margin-top: 17px;
     display: flex;
     justify-content: center;
-    button {
+    .point {
         margin-right: 10px;
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        background-color: #EFEEF6;
     }
-    button:last-child {
+    .point:last-child {
         margin-right: 0px;
+    }
+    .active {
+        background-color: #9E98DC;
     }
 }
