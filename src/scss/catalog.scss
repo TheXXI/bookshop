@@ -134,3 +134,40 @@
         margin: 0;
     }
 }
+
+@media screen and (max-width: $desktop-width) {
+    .catalog-categories-background {
+        display: none;
+    }
+    .catalog-categories-list {
+        display: flex;
+        align-items: center;
+        background-color: #EFEEF6;
+        overflow-x: scroll;
+        padding: 5px;
+        -ms-overflow-style: none;
+        overflow: -moz-scrollbars-none;
+         ::-webkit-scrollbar {
+            width: 0;
+        }
+        li {
+            white-space: pre;
+            padding: 0px;
+            margin: 0px;
+            &:last-child,
+            &:first-child {
+                padding: 0px;
+                margin: 0px;
+            }
+        }
+        .active {
+            list-style-type: none;
+        }
+    }
+    .catalog-books {
+        position: static;
+        padding-top: 0px;
+        width: 100%;
+        justify-content: space-between;
+    }
+}
