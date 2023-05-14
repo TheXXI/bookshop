@@ -76,6 +76,13 @@
         width: 212px;
         height: 300px;
     }
+    .no-cover {
+        width: 212px;
+        height: 300px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
     .info {
         margin: 50px 0 0 36px;
         max-width: 176px;

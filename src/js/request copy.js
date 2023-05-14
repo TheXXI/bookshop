@@ -62,7 +62,7 @@ function bookTemplate(bookInfo) {
 }
 
 function request(subject) {
-    fetch(url(key, subject))
+    fetch(url(key, s))
         .then((response) => { return response.json(); })
         .then((data) => {
             console.log(data);
@@ -81,7 +81,7 @@ function request(subject) {
                 books += bookElement;
             }
         });
-
+        console.log(books);
         catalog.innerHTML = books;
         if (data.lenght > 5) {
             let loadButton = document.createElement('button');
