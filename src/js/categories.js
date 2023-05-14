@@ -27,6 +27,7 @@ document.addEventListener('DOMContentLoaded', () => {
         let buttonElement = document.createElement('button');
         buttonElement.textContent = item;
         buttonElement.dataset.index = index;
+        buttonElement.addEventListener('click', () => console.log(1));
         listElement.appendChild(buttonElement);
         categoriesListElement.appendChild(listElement);
     });
