@@ -12,12 +12,15 @@ function initSlider() {
 
     initImagesAndPoint();
 
+    initAutoplay();
+
     function initImagesAndPoint() {
 
         imagesData.forEach((image, index) => {
             let imageElement = document.createElement('img');
             imageElement.src = image.img;
             imageElement.className = `slider-image n${index}`;
+            imageElement.dataset.index = index;
             if (index == 0) {
                 imageElement.classList.add('active');
             }
@@ -40,6 +43,13 @@ function initSlider() {
         });
     }
 
+    function initAutoplay() {
+        setInterval(() => {
+            let currentSlideNumber = +imageBlock.querySelector('.active').dataset.index;
+            moveSlide(currentSlideNumber < 2 ? currentSlideNumber + 1 : 0);
+        }, 5000);
+    }
+
     function moveSlide(num) {
         imageBlock.querySelector('.active').classList.remove('active');
         imageBlock.querySelector(`.n${num}`).classList.add('active');
@@ -47,16 +57,8 @@ function initSlider() {
         pointsBlock.querySelector('.active').classList.remove('active');
         pointsBlock.querySelector(`.n${num}`).classList.add('active');
     }
-
 }
 
 document.addEventListener('DOMContentLoaded', () => {
     initSlider();
-    /*const pointsElements = document.querySelector('.slider-points').childNodes;
-    const imageBlock = document.getElementById('slider-image');
-    pointsElements.forEach(item => {
-        item.addEventListener('click', {
-
-        });
-    });*/
 });

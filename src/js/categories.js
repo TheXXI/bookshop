@@ -77,9 +77,16 @@ document.addEventListener('DOMContentLoaded', () => {
         let buttonElement = document.createElement('button');
         buttonElement.textContent = item.name;
         buttonElement.dataset.index = index;
-        buttonElement.addEventListener('click', () => {
+        
+        buttonElement.addEventListener('click', (event) => {
             request(item.subject);
+
+            categoriesListElement.querySelector('.active').classList.remove('active');
+            console.log(event.target);
+            console.log(event.target.closest('li'));
+            event.target.closest('li').classList.add('active');
         });
+
         listElement.appendChild(buttonElement);
         categoriesListElement.appendChild(listElement);
     });
