@@ -1,20 +1,29 @@
-import { replaceAllInString } from './tools.js';
 const cartHeader = document.getElementById('books-in-cart');
+
+function getLocalsStorage() {
+    return JSON.parse(localStorage.getItem('booksInCart'));
+}
+
+function setLocalsStorage(data) {
+    localStorage.setItem('booksInCart', JSON.stringify(data));
+}
 
 export function initCartButtons() {
     const addCardButtons = document.querySelectorAll('#add-remove-cart');
     console.log(localStorage);
 
-    if (localStorage.length == 0) localStorage.setItem('booksInCart', '');
+    if (getLocalsStorage().length == 0) {
+        setLocalsStorage(new Array());
+    }
 
     addCardButtons.forEach(button => {
         const currentBookId = button.closest('.book-item').dataset.index;
         let checkBookInCard = false;
-        let booksInCart = localStorage.getItem('booksInCart');
-        if (booksInCart != '') {
-            booksInCart.split(',').forEach((element, index) => {
+        let booksInCart = getLocalsStorage();
+        console.log(booksInCart);
+        if (booksInCart.length > 0) {
+            booksInCart.forEach(element => {
                 if (element == currentBookId) checkBookInCard = true;
-
             });
 
             if (checkBookInCard) {
@@ -28,19 +37,21 @@ export function initCartButtons() {
             const currentBookId = e.target.closest('.book-item').dataset.index;
 
             let checkBookInCard = false;
-            let booksInCart = localStorage.getItem('booksInCart');
-            booksInCart.split(',').forEach((element, index) => {
+            let booksInCart = getLocalsStorage();
+            booksInCart.forEach(element => {
                 if (element == currentBookId) checkBookInCard = true;
             });
 
             if (checkBookInCard) {
 
                 console.log('---------');
-                console.log('  ' + typeof(booksInCart));
-                console.log('  >' + booksInCart + '<');
-                booksInCart = booksInCart.replace('X8KlDwAAQBAJ', '');
-                console.log('  >' + booksInCart + '<');
-                localStorage.setItem('booksInCart', booksInCart);
+                console.log('   ' + booksInCart);
+
+                let index = booksInCart.indexOf(currentBookId);
+                booksInCart.splice(index, 1);
+
+                console.log('   ' + booksInCart);
+                setLocalsStorage(booksInCart);
                 console.log('---------');
 
                 e.target.classList.remove('remove-cart-button');
@@ -51,9 +62,8 @@ export function initCartButtons() {
                 console.log('remove');
                 console.log(localStorage);
             } else {
-                if (booksInCart == '') booksInCart = currentBookId;
-                else booksInCart += ',' + currentBookId;
-                localStorage.setItem('booksInCart', booksInCart);
+                booksInCart.push(currentBookId);
+                setLocalsStorage(booksInCart);
 
                 e.target.classList.add('remove-cart-button');
                 button.textContent = 'in the cart';
@@ -62,6 +72,7 @@ export function initCartButtons() {
 
                 console.log('add');
                 console.log(localStorage);
+
             }
 
 
@@ -70,10 +81,10 @@ export function initCartButtons() {
 }
 
 function reloadCartHeader() {
-    const booksInCartCount = localStorage.getItem('booksInCart');
-    if (booksInCartCount == '') cartHeader.style.display = 'none';
+    const booksInCartCount = getLocalsStorage().length;
+    if (booksInCartCount == 0) cartHeader.style.display = 'none';
     else cartHeader.style.display = 'flex';
-    cartHeader.textContent = booksInCartCount.split(',').length;
+    cartHeader.textContent = booksInCartCount;
 }
 
 

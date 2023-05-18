@@ -35,7 +35,3 @@ export function ratingStars(rating) {
     }
     return result;
 }
-
-export function replaceAllInString(string, search, replace) {
-    return string.split(search).join(replace);
-}

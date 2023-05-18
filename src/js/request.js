@@ -5,7 +5,6 @@ function url(key, subject) {
     return `https://www.googleapis.com/books/v1/volumes?q="subject:${subject}"&key=${key}&printType=books&startIndex=0&maxResults=6&langRestrict=en`;
 }
 const key = 'AIzaSyDQUaZUwEvbjQxO8awYggZPzgolT9-YNAw';
-const spinner = document.getElementById('spinner');
 const catalog = document.getElementById('catalog');
 
 const spinnerElement = `
@@ -74,7 +73,7 @@ export function request(subject) {
         initCartButtons();
 
         if (length > 6) {
-            
+
             let loadButton = document.createElement('button');
             loadButton.classList.add('catalog-button');
             loadButton.addEventListener('click', (event) => {
