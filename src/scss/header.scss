@@ -69,7 +69,8 @@ header {
 
 @media screen and (max-width: $desktop-width) {
     header {
-        padding: 0 20px;
+        height: auto;
+        padding: 30px 20px;
     }
 }
 
