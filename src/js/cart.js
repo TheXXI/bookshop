@@ -1,7 +1,8 @@
 const cartHeader = document.getElementById('books-in-cart');
 
 function getLocalsStorage() {
-    return JSON.parse(localStorage.getItem('booksInCart'));
+    const data = JSON.parse(localStorage.getItem('booksInCart'));
+    return data ? data : [];
 }
 
 function setLocalsStorage(data) {
@@ -74,7 +75,6 @@ export function initCartButtons() {
                 console.log(localStorage);
 
             }
-
 
         });
     });

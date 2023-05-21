@@ -63,22 +63,22 @@ export function request(subject) {
         console.log('length: ' + length);
         let books = '';
         data.forEach((item, index) => {
-            if (index < 6) {
+            if (index < 3) {
                 books += createBook(item);
             }
         });
 
         catalog.innerHTML += books;
 
-        initCartButtons();
 
-        if (length > 6) {
+
+        if (length > 3) {
 
             let loadButton = document.createElement('button');
             loadButton.classList.add('catalog-button');
             loadButton.addEventListener('click', (event) => {
                 event.target.parentElement.parentElement.removeChild(event.target.parentElement);
-                render(data.splice(6));
+                render(data.splice(3));
             });
             let loadButtonBlock = document.createElement('div');
             loadButtonBlock.classList.add('load-block');
@@ -86,6 +86,8 @@ export function request(subject) {
             loadButtonBlock.appendChild(loadButton);
             catalog.appendChild(loadButtonBlock);
         }
+
+        initCartButtons();
     }
 }
 
