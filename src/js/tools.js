@@ -9,9 +9,9 @@ export function getСurrency(code) {
 }
 
 export function ratingStars(rating) {
-    const star = './src/images/icons/star.svg';
-    const starHalfFill = './src/images/icons/star_half_fill.svg';
-    const starFill = './src/images/icons/star_fill.svg';
+    const star = './dist/images/icons/star.svg';
+    const starHalfFill = './dist/images/icons/star_half_fill.svg';
+    const starFill = './dist/images/icons/star_fill.svg';
 
     let starsCount = 0;
     let result = '';
