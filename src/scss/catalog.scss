@@ -169,54 +169,98 @@
         }
     }
     
-    @media screen and (max-width: $desktop-width) {
-        .catalog-categories-background {
-            display: none;
+@media screen and (max-width: $desktop-width) {
+    .catalog-categories-background {
+        display: none;
+    }
+    .catalog-categories-list {
+        display: flex;
+        align-items: center;
+        background-color: #EFEEF6;
+        overflow-x: scroll;
+        padding: 15px 5px;
+        -ms-overflow-style: none;
+        overflow: -moz-scrollbars-none;
+        ::-webkit-scrollbar {
+            width: 0;
         }
-        .catalog-categories-list {
-            display: flex;
-            align-items: center;
-            background-color: #EFEEF6;
-            overflow-x: scroll;
-            padding: 15px 5px;
-            -ms-overflow-style: none;
-            overflow: -moz-scrollbars-none;
-             ::-webkit-scrollbar {
-                width: 0;
-            }
-            li {
-                white-space: pre;
+        li {
+            white-space: pre;
+            padding: 0px;
+            margin: 0px;
+            &:last-child,
+            &:first-child {
                 padding: 0px;
                 margin: 0px;
-                &:last-child,
-                &:first-child {
-                    padding: 0px;
-                    margin: 0px;
-                }
-                button {
-                    font-size: 18px;
-                }
             }
-            .active {
-                list-style-type: none;
-                button {
-                    font-size: 18px;
-                }
+            button {
+                font-size: 18px;
             }
         }
-        .catalog-books {
-            position: static;
-            padding-top: 0px;
-            width: 100%;
-            justify-content: space-around;
-        }
-        .book-item {
-            margin: 40px 0 0 0;
-        }
-        .book-item:nth-child(odd) {
-            margin-right: 0;
-        }
-        .load-block {
-            margin: 30px auto;
+        .active {
+            list-style-type: none;
+            button {
+                font-size: 18px;
+            }
         }
     }
+    .catalog-books {
+        position: static;
+        padding-top: 0px;
+        width: 100%;
+        justify-content: space-around;
+    }
+    .book-item {
+        margin: 40px 0 0 0;
+    }
+    .book-item:nth-child(odd) {
+        margin-right: 0;
+    }
+    .load-block {
+        margin: 30px auto;
+    }
+}
+
+@media screen and (max-width: 850px) {
+    .catalog-books {
+        justify-content: center;
+    }
+}
+
+@media screen and (max-width: 465px) {
+    .catalog-books {
+        
+        
+    }
+    .book-item {
+        .cover {
+            width: 160px;
+            height: 226px;
+        }
+        .no-cover {
+            width: 160px;
+            height: 226px;
+        }
+
+        .info {
+            margin: 0 0 0 10px;
+            max-width: 150px;
+
+            .author,
+            .rating span,
+            .description {
+                font-family: 'Open Sans';
+                font-weight: 400;
+                font-size: 8px;
+                line-height: 10px;
+                color: $text-color;
+            }
+
+            .catalog-button {
+                width: 90%;
+            }
+        }
+
+        /**/
+    }
+}

@@ -1,7 +1,7 @@
 const imagesData = [
-    { 'img': './src/images/banner1.svg' },
-    { 'img': './src/images/banner2.svg' },
-    { 'img': './src/images/banner3.svg' }
+    { 'img': './dist/images/banner1.svg' },
+    { 'img': './dist/images/banner2.svg' },
+    { 'img': './dist/images/banner3.svg' }
 
 ];
 

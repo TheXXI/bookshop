@@ -47,7 +47,7 @@ function createBook(bookInfo) {
     </div>`;
 }
 
-export function request(subject) {
+export function request(subject = 'Architecture') {
     catalog.innerHTML = spinnerElement;
     fetch(url(key, subject))
         .then((response) => { return response.json(); })
@@ -93,5 +93,5 @@ export function request(subject) {
 
 
 document.addEventListener('DOMContentLoaded', () => {
-    request('Travel');
+    request();
 });
