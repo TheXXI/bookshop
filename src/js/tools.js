@@ -33,5 +33,6 @@ export function ratingStars(rating) {
         result += `<img src="${star}" alt="Rating star">`;
         starsCount++;
     }
+    
     return result;
 }
