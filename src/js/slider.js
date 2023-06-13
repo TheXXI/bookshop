@@ -5,14 +5,21 @@ const imagesData = [
 
 ];
 
+const imageChangeInSeconds = 5;
+
 const imageBlock = document.getElementById('slider-content');
-const pointsBlock = document.querySelector('.slider-points');
+const pointsBlock = document.getElementById('slider-points');
+
+const nextButton = document.getElementById('next-button');
+const prevButton = document.getElementById('prev-button');
 
 function initSlider() {
 
     initImagesAndPoint();
 
     initAutoplay();
+
+    initMobileButtons();
 
     function initImagesAndPoint() {
 
@@ -24,7 +31,7 @@ function initSlider() {
             if (index == 0) {
                 imageElement.classList.add('active');
             }
-            imageElement.alt = toString(index) + 'slider image';
+            imageElement.alt = 'Slider image';
             imageBlock.appendChild(imageElement);
 
             let pointElement = document.createElement('button');
@@ -42,12 +49,24 @@ function initSlider() {
 
         });
     }
+    
+    function initMobileButtons() {
+        nextButton.addEventListener('click', () => {
+            let currentSlideNumber = +imageBlock.querySelector('.active').dataset.index;
+            moveSlide(currentSlideNumber < 2 ? currentSlideNumber + 1 : 0);
+        });
+
+        prevButton.addEventListener('click', () => {
+            let currentSlideNumber = +imageBlock.querySelector('.active').dataset.index;
+            moveSlide(currentSlideNumber > 0 ? currentSlideNumber - 1 : 2);
+        });
+    }
 
     function initAutoplay() {
         setInterval(() => {
             let currentSlideNumber = +imageBlock.querySelector('.active').dataset.index;
             moveSlide(currentSlideNumber < 2 ? currentSlideNumber + 1 : 0);
-        }, 5000);
+        }, imageChangeInSeconds * 1000);
     }
 
     function moveSlide(num) {
@@ -57,6 +76,7 @@ function initSlider() {
         pointsBlock.querySelector('.active').classList.remove('active');
         pointsBlock.querySelector(`.n${num}`).classList.add('active');
     }
+
 }
 
 document.addEventListener('DOMContentLoaded', () => {

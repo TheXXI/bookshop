@@ -170,6 +170,9 @@
     }
     
 @media screen and (max-width: $desktop-width) {
+    .catalog {
+        margin-top: 0px;
+    }
     .catalog-categories-background {
         display: none;
     }
@@ -251,7 +254,7 @@
             .description {
                 font-family: 'Open Sans';
                 font-weight: 400;
-                font-size: 8px;
+                font-size: 10px;
                 line-height: 10px;
                 color: $text-color;
             }

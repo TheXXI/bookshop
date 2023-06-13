@@ -82,8 +82,6 @@ document.addEventListener('DOMContentLoaded', () => {
             request(item.subject);
 
             categoriesListElement.querySelector('.active').classList.remove('active');
-            console.log(event.target);
-            console.log(event.target.closest('li'));
             event.target.closest('li').classList.add('active');
         });
 

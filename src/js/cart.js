@@ -11,7 +11,6 @@ function setLocalsStorage(data) {
 
 export function initCartButtons() {
     const addCardButtons = document.querySelectorAll('#add-remove-cart');
-    console.log(localStorage);
 
     if (getLocalsStorage().length == 0) {
         setLocalsStorage(new Array());
@@ -21,7 +20,6 @@ export function initCartButtons() {
         const currentBookId = button.closest('.book-item').dataset.index;
         let checkBookInCard = false;
         let booksInCart = getLocalsStorage();
-        console.log(booksInCart);
         if (booksInCart.length > 0) {
             booksInCart.forEach(element => {
                 if (element == currentBookId) checkBookInCard = true;
@@ -44,24 +42,14 @@ export function initCartButtons() {
             });
 
             if (checkBookInCard) {
-
-                console.log('---------');
-                console.log('   ' + booksInCart);
-
                 let index = booksInCart.indexOf(currentBookId);
                 booksInCart.splice(index, 1);
-
-                console.log('   ' + booksInCart);
-                setLocalsStorage(booksInCart);
-                console.log('---------');
-
+                setLocalsStorage(booksInCart);       
                 e.target.classList.remove('remove-cart-button');
                 button.textContent = 'buy now';
 
                 reloadCartHeader();
 
-                console.log('remove');
-                console.log(localStorage);
             } else {
                 booksInCart.push(currentBookId);
                 setLocalsStorage(booksInCart);
@@ -70,10 +58,6 @@ export function initCartButtons() {
                 button.textContent = 'in the cart';
 
                 reloadCartHeader();
-
-                console.log('add');
-                console.log(localStorage);
-
             }
 
         });
